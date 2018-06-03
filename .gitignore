@@ -1,0 +1,5 @@
+# Vagrant specific
+.vagrant/
+
+# Project files
+hakase
