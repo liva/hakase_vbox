@@ -1,5 +1,5 @@
 # hakase_vbox
-hakase_vbox is a repository to install _hakase_ kernel.
+hakase_vbox is a vagrant(virtualbox) environment installed _hakase_ kernel.
 
 ## Dependencies
 - [Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -13,8 +13,11 @@ To install _hakase_ kernel, simply run:
 ```
 $ ./setup.sh
 ```
-When installation the kernel is completed, please check with `uname -r` to see if it is properly installed.
+
+When the kernel installation is completed, please check with `uname -r` to see if it is properly installed.
+
 ```
-$ uname -r
+$ vagrant ssh -c "uname -r"
 4.14.34hakase
+Shared connection to 127.0.0.1 closed.
 ```
