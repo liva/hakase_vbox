@@ -67,4 +67,6 @@ Vagrant.configure("2") do |config|
      sudo apt update
      sudo apt install -y g++ make
   SHELL
+
+  printf("host_dir:\t%s\n", File.dirname(__FILE__))
 end
