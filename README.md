@@ -4,6 +4,7 @@ hakase_vbox is a repository to install _hakase_ kernel.
 ## Dependencies
 - [Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](https://www.vagrantup.com/downloads.html)
+
 Do not install them via package manager (apt, yum, etc...).
 Please download and install the latest version from the official website.
 
