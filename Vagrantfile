@@ -54,7 +54,16 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "4096", "--cpus", "2", "--ioapic", "on"]
+    vb.cpus = 2
+    vb.memory = 4096
+    vb.customize [
+      "modifyvm", :id,
+      "--ioapic", "on",
+    ]
+    vb.customize [
+      "guestproperty", "set", :id,
+      "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000
+    ]
   end
   #
   # View the documentation for the provider you are using for more
