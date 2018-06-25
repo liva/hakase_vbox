@@ -55,12 +55,13 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    vb.cpus = 2
+    vb.cpus = 5
     vb.memory = 4096
     vb.customize [
       "modifyvm", :id,
       "--ioapic", "on",
       "--hpet", "on",
+      "--x2apic", "off",
     ]
     vb.customize [
       "guestproperty", "set", :id,
