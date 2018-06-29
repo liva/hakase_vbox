@@ -26,6 +26,7 @@ wget http://www.pf.is.s.u-tokyo.ac.jp/~awamoto/hakase/linux-libc-dev_4.14.34haka
 dpkg -i *hakase-1_amd64.deb
 
 sed -i -e "s/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet memmap=0x80000000\$0x80000000\"/g" /etc/default/grub
+sed -i -e "s/GRUB_TIMEOUT=10/GRUB_TIMEOUT=2/g" /etc/default/grub
 update-grub2
 popd
 
