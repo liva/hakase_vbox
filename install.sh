@@ -26,7 +26,7 @@ dpkg -i *hakase-1_amd64.deb
 
 apt install -y libelf-dev make g++
 
-sed -i -e "s/GRUB_CMDLINE_LINUX_DEFAULT=\"/GRUB_CMDLINE_LINUX_DEFAULT=\"memmap=0x80000000\\\\\\\$0x80000000/g" /etc/default/grub
+sed -i -e "s/GRUB_CMDLINE_LINUX_DEFAULT=\"/GRUB_CMDLINE_LINUX_DEFAULT=\"memmap=0x80000000\\\\\\\$0x80000000 /g" /etc/default/grub
 sed -i -e "s/GRUB_TIMEOUT=10/GRUB_TIMEOUT=2/g" /etc/default/grub
 update-grub2
 popd
