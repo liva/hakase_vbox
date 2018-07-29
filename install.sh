@@ -10,14 +10,14 @@ if [ "$EXEC_PROTECTOR" != "disabled" ]; then
 fi
 
 systemctl stop apt-daily.service
-systemctl kill --kill-who=all apt-daily.service
-
-# wait until `apt-get updated` has been killed
-while ! (systemctl list-units --all apt-daily.service | fgrep -q dead)
-do
-  sleep 1;
-done
-
+if systemctl kill --kill-who=all apt-daily.service; then
+    # wait until `apt-get updated` has been killed
+    while ! (systemctl list-units --all apt-daily.service | fgrep -q dead)
+    do
+        sleep 1;
+    done
+fi
+    
 # avoid duplicate installation
 test -f /etc/hakase_installed && exit
 
